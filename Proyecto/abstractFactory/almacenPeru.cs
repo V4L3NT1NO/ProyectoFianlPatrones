@@ -1,0 +1,4 @@
+class almacenPeru: IAlmacen
+{
+    
+}
