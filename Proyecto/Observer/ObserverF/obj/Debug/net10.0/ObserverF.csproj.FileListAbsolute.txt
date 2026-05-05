@@ -1,0 +1,14 @@
+C:\Users\GAMBOA\source\repos\DOMAINEVENT\ObserverF\bin\Debug\net10.0\ObserverF.exe
+C:\Users\GAMBOA\source\repos\DOMAINEVENT\ObserverF\bin\Debug\net10.0\ObserverF.deps.json
+C:\Users\GAMBOA\source\repos\DOMAINEVENT\ObserverF\bin\Debug\net10.0\ObserverF.runtimeconfig.json
+C:\Users\GAMBOA\source\repos\DOMAINEVENT\ObserverF\bin\Debug\net10.0\ObserverF.dll
+C:\Users\GAMBOA\source\repos\DOMAINEVENT\ObserverF\bin\Debug\net10.0\ObserverF.pdb
+C:\Users\GAMBOA\source\repos\DOMAINEVENT\ObserverF\obj\Debug\net10.0\ObserverF.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\GAMBOA\source\repos\DOMAINEVENT\ObserverF\obj\Debug\net10.0\ObserverF.AssemblyInfoInputs.cache
+C:\Users\GAMBOA\source\repos\DOMAINEVENT\ObserverF\obj\Debug\net10.0\ObserverF.AssemblyInfo.cs
+C:\Users\GAMBOA\source\repos\DOMAINEVENT\ObserverF\obj\Debug\net10.0\ObserverF.csproj.CoreCompileInputs.cache
+C:\Users\GAMBOA\source\repos\DOMAINEVENT\ObserverF\obj\Debug\net10.0\ObserverF.dll
+C:\Users\GAMBOA\source\repos\DOMAINEVENT\ObserverF\obj\Debug\net10.0\refint\ObserverF.dll
+C:\Users\GAMBOA\source\repos\DOMAINEVENT\ObserverF\obj\Debug\net10.0\ObserverF.pdb
+C:\Users\GAMBOA\source\repos\DOMAINEVENT\ObserverF\obj\Debug\net10.0\ObserverF.genruntimeconfig.cache
+C:\Users\GAMBOA\source\repos\DOMAINEVENT\ObserverF\obj\Debug\net10.0\ref\ObserverF.dll
