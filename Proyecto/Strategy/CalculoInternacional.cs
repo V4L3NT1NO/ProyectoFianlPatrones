@@ -1,3 +1,4 @@
+using Shared;
 public class CalculoInternacional : IEstrategiaCalculo
     {
         private readonly Dictionary<string, float> _aranceles = new()
@@ -7,7 +8,7 @@ public class CalculoInternacional : IEstrategiaCalculo
             { "Chile",     0.12f }
         };
 
-        public float CalcularCosto(Envio envio)
+        public float CalcularCosto(IEnvio envio)
         {
             float tarifaBase = 0.6f * envio.DistanciaKm + 2.5f * envio.Peso;
             float arancel = _aranceles.TryGetValue(envio.PaisDestino, out float tasa) ? tasa : 0.18f;
