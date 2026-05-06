@@ -8,6 +8,11 @@ class Internacional : IBuilderDespacho
     }
 
     public Despacho build(){
+        
+        this.identificador();
+        this.descripcion();
+        this.instruccionesManejo();
+        this.DocumentacionAduanera();
         return this.despacho;
     }
 
@@ -48,8 +53,5 @@ class Internacional : IBuilderDespacho
         this.despacho.contenido += " - Documentos de transporte (conocimiento de embarque, guía aérea, etc.).\n";
     }
 
-    public void seguroTransito()
-    {
-        
-    }
+    
 }

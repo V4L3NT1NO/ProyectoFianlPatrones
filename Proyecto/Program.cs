@@ -28,7 +28,16 @@ class Program
 
         //Crear Cadena de mando (no me acuerdo el orden )
 
-        var cadenaMando = new CoordinadorZona().setSiguiente(new GerenteOperaciones()).setSiguiente(new DirectorRegional());
+        var coordinador = new CoordinadorZona();
+        var gerente = new GerenteOperaciones();
+        var director = new DirectorRegional();
+
+
+        coordinador.setSiguiente(gerente);
+        gerente.setSiguiente(director);
+
+        var cadenaMando = coordinador;
+            
         
 
         // agregar cadena a operadores
@@ -45,9 +54,25 @@ class Program
 
         var directorDespacho = new DirectorDespacho();
 
+
         operador1.SetDirectorDespacho(directorDespacho);
         supervisor.SetDirectorDespacho(directorDespacho);
 
+
+
+
+
+        //pruebas
+
+        var builderInternacional = new Internacional();
+        directorDespacho.setBuilder(builderInternacional);
+        var archivo = operador1.directorDespacho.contruir();
+        Console.WriteLine($"Archivo construido: {archivo.contenido}");
+
+
+        var incidenciaClimea = new Incidencia("Clima","Medio");
+
+        operador1.cadenaMando.manejar(incidenciaClimea);
 
 
         

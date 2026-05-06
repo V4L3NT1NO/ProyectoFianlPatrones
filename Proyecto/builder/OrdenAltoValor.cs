@@ -9,6 +9,11 @@ class OrdenAltoValor : IBuilderDespacho
 
     public Despacho build()
     {
+        this.identificador();
+        this.descripcion();
+        this.instruccionesManejo();
+        this.DocumentacionAduanera();
+        this.seguroTransito();
         return this.despacho;
     }
 

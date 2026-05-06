@@ -10,9 +10,9 @@ namespace ObserverF
 
 
 
-        private AbstractHandler cadenaMando;
+        public AbstractHandler cadenaMando;
 
-        private DirectorDespacho directorDespacho;
+        public DirectorDespacho directorDespacho;
 
         public OperadorCampo(string nombre) => this.nombre = nombre;
 

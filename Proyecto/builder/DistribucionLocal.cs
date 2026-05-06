@@ -9,6 +9,8 @@ class DistribucionLocal : IBuilderDespacho
 
     public Despacho build()
     {
+        this.identificador();
+        this.descripcion();
         return this.despacho;
     }
 
@@ -22,17 +24,7 @@ class DistribucionLocal : IBuilderDespacho
         despacho.contenido += "Descripción: Distribución Local.\n";
     }
 
-    public void instruccionesManejo()
-    {
-    }
-
-    public void DocumentacionAduanera()
-    {
-    }
-
-    public void seguroTransito()
-    {
-    }
+    
 
     public void reset()
     {

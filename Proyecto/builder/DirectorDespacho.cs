@@ -6,31 +6,12 @@ class DirectorDespacho
         this.builder = builder;
     }
 
-    public Despacho contruirLoacl()
+    public Despacho contruir()
     {
-        this.builder.identificador();
-        this.builder.descripcion();
-        return this.builder.build();
-
-    }
-
-    public Despacho construirInternacional()
-    {
-        this.builder.identificador();
-        this.builder.descripcion();
-        this.builder.instruccionesManejo();
-        this.builder.DocumentacionAduanera();
-       
-        return this.builder.build();
-    }
-
-    public Despacho construirOrdenAltoValor()
-    {
-        this.builder.identificador();
-        this.builder.descripcion();
-        this.builder.instruccionesManejo();
-        this.builder.DocumentacionAduanera();
-        this.builder.seguroTransito();
+        if(builder == null)
+        {
+            throw new Exception("No se ha asignado un builder");
+        }
         return this.builder.build();
     }
 }
