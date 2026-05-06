@@ -2,11 +2,15 @@ public class DirectorRegional : AbstractHandler
     {
         public DirectorRegional()
         {
-            NivelMaximo = (int)NivelGravedad.Alto;
+            NivelMaximo = "Máximo";
         }
 
-        protected override void resolver(Incidencia incidencia)
+        protected override bool resolver(Incidencia incidencia)
         {
-            Console.WriteLine($"DirectorRegional resolvió: {incidencia}");
+           if(incidencia.Nivel == NivelMaximo)
+            {
+                Console.WriteLine($"CoordinadorRegional resolvió: {incidencia}");
+                return true;
+            }else{return false;}
         }
     }

@@ -2,11 +2,15 @@ public class CoordinadorZona : AbstractHandler
     {
         public CoordinadorZona()
         {
-            NivelMaximo = (int)NivelGravedad.Bajo;
+            NivelMaximo = "Bajo";
         }
 
-        protected override void resolver(Incidencia incidencia)
+        protected override bool resolver(Incidencia incidencia)
         {
-            Console.WriteLine($"CoordinadorZona resolvió: {incidencia}");
+            if(incidencia.Nivel == NivelMaximo)
+            {
+                Console.WriteLine($"CoordinadorZona resolvió: {incidencia}");
+                return true;
+            }else{return false;}
         }
     }

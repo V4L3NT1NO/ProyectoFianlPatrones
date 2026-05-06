@@ -1,9 +1,9 @@
 public abstract class AbstractHandler
 {
-    protected int NivelMaximo;
-    private AbstactHandler _siguiente;
+    protected string NivelMaximo;
+    private AbstractHandler _siguiente;
 
-    public AbstractHandler setSiguiente(AbstactHandler siguiente)
+    public AbstractHandler setSiguiente(AbstractHandler siguiente)
     {
         _siguiente = siguiente;
         return siguiente;
@@ -11,18 +11,23 @@ public abstract class AbstractHandler
 
     public void manejar(Incidencia incidencia)
     {
-        if((int)incidencia.Nivel <= NivelMaximo)
+        if (this.resolver(incidencia))
         {
-            resolver(incidencia);
-        }else if (_siguiente != null)
-        {
-            Console.WriteLine($"  → {GetType().Name} no tiene autoridad. Escalando...");
-            _siguiente.manejar(incidencia);
-        }else
-        {
-            Console.WriteLine($"Ningún manejador pudo resolver: {incidencia}");
+            
         }
+        else
+        {
+            if (_siguiente != null)
+            {
+                _siguiente.manejar(incidencia);
+            }
+            else
+            {
+                Console.WriteLine($"Nadie pudo resolver: {incidencia}");
+            }
+        }
+        
     }
 
-    protected abstract void resolver(Incidencia incidencia);
+    protected abstract bool resolver(Incidencia incidencia);
 }

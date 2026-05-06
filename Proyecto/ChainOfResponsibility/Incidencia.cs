@@ -1,9 +1,9 @@
 public class Incidencia
 {
     public string Descripcion { get; set; }
-    public NivelGravedad Nivel { get; set; }
+    public string Nivel { get; set; }
 
-    public Incidencia(string descripcion, NivelGravedad nivel)
+    public Incidencia(string descripcion, string nivel)
     {
         Descripcion = descripcion;
         Nivel = nivel;

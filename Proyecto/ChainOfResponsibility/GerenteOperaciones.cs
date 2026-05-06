@@ -2,11 +2,15 @@ public class GerenteOperaciones : AbstractHandler
     {
         public GerenteOperaciones()
         {
-            NivelMaximo = (int)NivelGravedad.Medio;
+            NivelMaximo = "Medio" ;
         }
 
-        protected override void resolver(Incidencia incidencia)
+        protected override bool resolver(Incidencia incidencia)
         {
-            Console.WriteLine($"GerenteOperaciones resolvió: {incidencia}");
+           if(incidencia.Nivel == NivelMaximo)
+            {
+                Console.WriteLine($"GerenteOperaciones resolvió: {incidencia}");
+                return true;
+            }else{return false;}
         }
     }
