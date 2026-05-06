@@ -1,4 +1,6 @@
+using Shared;
 public interface IEstrategiaCalculo
-    {
-        float CalcularCosto(Envio envio);
-    }
+{
+    float CalcularCosto(IEnvio envio);
+
+}

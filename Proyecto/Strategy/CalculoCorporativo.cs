@@ -1,6 +1,7 @@
+using Shared;
 public class CalculoCorporativo : IEstrategiaCalculo
     {
-        public float CalcularCosto(Envio envio)
+        public float CalcularCosto(IEnvio envio)
         {
             float tarifaBase = 0.4f * envio.DistanciaKm + 1.5f * envio.Peso;
             float descuento = ObtenerDescuento(envio.EnviosMensuales);
