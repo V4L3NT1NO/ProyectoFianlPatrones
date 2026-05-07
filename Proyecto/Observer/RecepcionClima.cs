@@ -28,7 +28,7 @@ namespace ObserverF
             operadores.Remove(operador);
         }
 
-        public void Notificar()
+        public void Notificar(String mensaje)
         {
             if (operadores.Count == 0)
             {
@@ -38,7 +38,7 @@ namespace ObserverF
 
             foreach (IObserver o in operadores)
             {
-                o.Actualizar(this);
+                o.Actualizar(mensaje);
             }
             Console.WriteLine("----------------------------------------------------------------------------");
         }

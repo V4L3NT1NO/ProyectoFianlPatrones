@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CompositeF
 {
-    internal class CamIntermedio : IComponenteCamino
+    public class CamIntermedio : IComponenteCamino
     {
         // Lista que puede contener caminos simples O OTROS caminos intermedios
         private List<IComponenteCamino> componentes = new List<IComponenteCamino>();

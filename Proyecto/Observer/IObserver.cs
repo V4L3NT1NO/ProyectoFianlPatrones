@@ -7,8 +7,12 @@ namespace ObserverF
 {
     internal interface IObserver
     {
-        void Actualizar(ISubject sujeto);
+        void Actualizar(String noticia);
 
         void SetHandler(AbstractHandler handler);
+
+        void SetDirectorDespacho(DirectorDespacho director);
+
+        void SetFabrica(ICreadorEnvio fabrica);
     }
 }

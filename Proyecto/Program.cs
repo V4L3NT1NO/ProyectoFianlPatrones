@@ -103,6 +103,23 @@ class Program
         Console.WriteLine($"Costo del envío: {envio.CalcularCosto()}");
         }
 
+        envio.agregarComponenteCaminio(new CamSimple(20f, 100));
+
+        if(envio != null){
+        Console.WriteLine($"Envío procesado: {envio.ObtenerInfo()}");
+//Utilizar el strategy
+
+        Console.WriteLine($"Costo del envío: {envio.CalcularCosto()}");
+        }
+
+
+
+        //Pruebas de notificacion de recepciones
+        recepcionClima.Notificar("El clima esta feo");
+        recepcionVehiculos.Notificar("Hay vehículos disponibles");
+        recepcionCentro.Notificar("El centro de distribución está saturado");
+
+
         
 
        

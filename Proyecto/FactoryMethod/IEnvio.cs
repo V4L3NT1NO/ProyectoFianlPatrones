@@ -1,5 +1,7 @@
-namespace Shared
-{
+namespace Shared;
+using CompositeF;
+
+
     public abstract class Envio
     {
 
@@ -14,6 +16,7 @@ namespace Shared
         public abstract float CalcularCosto();
         public abstract void setStrategy(IEstrategiaCalculo estrategia);
 
+        public abstract void  agregarComponenteCaminio(IComponenteCamino componente);
+
         
     }
-}

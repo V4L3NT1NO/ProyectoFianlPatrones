@@ -1,4 +1,5 @@
 using Shared;
+using CompositeF;
 public class EnvioRefrigerado : Envio
 {
     
@@ -6,6 +7,8 @@ public class EnvioRefrigerado : Envio
     private EnvioConfig configEnvio;
 
     private IEstrategiaCalculo estrategiaCalculo = new CalculoEstandar();
+    public CamIntermedio comonenteCaminio = new CamIntermedio();
+
 
     public EnvioRefrigerado(EnvioConfig config)
     {
@@ -58,11 +61,25 @@ public class EnvioRefrigerado : Envio
 
 
 
-        return this.estrategiaCalculo.CalcularCosto(this,clienteActual);
+        
+        var Resultado1 = this.comonenteCaminio.SumaCosto(); 
+        var resultado2 = this.estrategiaCalculo.CalcularCosto(this,clienteActual);
+
+        
+
+
+
+
+        return Resultado1 + resultado2;
     }
 
     public override void setStrategy(IEstrategiaCalculo estrategia)
     {
         this.estrategiaCalculo = estrategia;
     }
+    public override void agregarComponenteCaminio(IComponenteCamino componente)
+    {
+        this.comonenteCaminio.AñadirComponente(componente);
+    }
+    
 }

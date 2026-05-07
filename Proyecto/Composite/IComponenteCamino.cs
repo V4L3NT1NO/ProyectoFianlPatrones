@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CompositeF
 {
-    internal interface IComponenteCamino
+    public interface IComponenteCamino
     {
         float SumaCosto();
         int ObtenerTiempo();

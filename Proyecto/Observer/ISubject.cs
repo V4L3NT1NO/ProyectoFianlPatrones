@@ -10,6 +10,6 @@ namespace ObserverF
 
         void Desuscribir(IObserver operador);
 
-        void Notificar();
+        void Notificar(String mensaje);
     }
 }

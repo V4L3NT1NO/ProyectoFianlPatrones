@@ -23,10 +23,9 @@ namespace ObserverF
 
 
         public SupervisorRegional(string nombre) => this.nombre = nombre;
-        public void Actualizar(ISubject sujeto)
+        public void Actualizar(String noticia)
         {
-            if (sujeto is RecepcionCentro cap && cap.PorcentajeOcupacion > 90)
-                Console.WriteLine("[SUPERVISOR]: Alerta de saturación. Desviando carga a otro centro.");
+            Console.WriteLine($"[SUPERVISOR]: Recibida noticia: {noticia}");
         }
 
 

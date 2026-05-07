@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CompositeF
 {
-    internal class CamSimple : IComponenteCamino
+    public class CamSimple : IComponenteCamino
     {
         private float costoBase;
         private int tiempoEstimado;

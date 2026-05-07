@@ -1,7 +1,11 @@
 using Shared;
+using CompositeF;
 public class EnvioValorDeclarado : Envio
 {
     private EnvioConfig configEnvio ;
+
+    public CamIntermedio comonenteCaminio = new CamIntermedio();
+
 
     
 
@@ -10,6 +14,11 @@ public class EnvioValorDeclarado : Envio
     public EnvioValorDeclarado(EnvioConfig config)
     {
         this.configEnvio = config;
+    }
+
+    public override void agregarComponenteCaminio(IComponenteCamino componente)
+    {
+        this.comonenteCaminio.AñadirComponente(componente);
     }
     
 
@@ -58,11 +67,17 @@ public class EnvioValorDeclarado : Envio
             this.setStrategy(new CalculoEstandar());
         }
 
+       
+
+        var Resultado1 = this.comonenteCaminio.SumaCosto(); 
+        var resultado2 = this.estrategiaCalculo.CalcularCosto(this,clienteActual);
+
         
 
 
 
-        return this.estrategiaCalculo.CalcularCosto(this, clienteActual);
+
+        return Resultado1 + resultado2;
     }
 
     public override void setStrategy(IEstrategiaCalculo estrategia)
