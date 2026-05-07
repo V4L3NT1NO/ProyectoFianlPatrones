@@ -1,11 +1,23 @@
 using Shared;
 public abstract class ICreadorEnvio
     {
-        public abstract IEnvio CrearEnvio();
+        public abstract Envio CrearEnvio(EnvioConfig config);
 
-        public void ProcesarEnvio()
+        public Envio EntregarEnvio(EnvioConfig config)
         {
-            IEnvio envio = CrearEnvio();
-            Console.WriteLine($"  Envío creado → {envio.ObtenerInfo()}");
+            if(!Validar(config))
+            {
+                Console.WriteLine("  Configuración no válida para este tipo de envío.");
+                return null;
+            }
+            else
+            {
+                var envio = CrearEnvio(config);
+                Console.WriteLine($"  Envío creado → {envio.ObtenerInfo()}");
+                return envio;
+            }
         }
+
+        public abstract bool Validar(EnvioConfig config);
+        
     }

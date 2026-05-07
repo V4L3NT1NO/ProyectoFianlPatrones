@@ -14,7 +14,12 @@ namespace ObserverF
 
         public DirectorDespacho directorDespacho;
 
+        public ICreadorEnvio fabrica;
+
         public OperadorCampo(string nombre) => this.nombre = nombre;
+
+        
+        public void SetFabrica(ICreadorEnvio fabrica) => this.fabrica = fabrica;
 
         public void SetDirectorDespacho(DirectorDespacho director) => this.directorDespacho = director;
         public void SetHandler(AbstractHandler handler) => this.cadenaMando = handler;

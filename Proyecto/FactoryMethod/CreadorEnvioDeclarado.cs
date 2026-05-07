@@ -1,19 +1,29 @@
 using Shared;
 public class CreadorEnvioValorDeclarado : ICreadorEnvio
     {
-        private readonly float _peso;
-        private readonly string _dimensiones;
-        private readonly float _distanciaKm;
-        private readonly float _montoAsegurado;
+        public override Envio CrearEnvio(EnvioConfig config) =>
+            new EnvioValorDeclarado(config);
 
-        public CreadorEnvioValorDeclarado(float peso, string dimensiones, float distanciaKm, float montoAsegurado)
-        {
-            _peso = peso;
-            _dimensiones = dimensiones;
-            _distanciaKm = distanciaKm;
-            _montoAsegurado = montoAsegurado;
+        public override bool Validar(EnvioConfig config){
+            if(config.Peso <= 0 &&
+             config.Dimensiones != null &&
+              config.MontoAsegurado > 0 &&
+               config.DistanciaKm >0 && 
+               config.Temperatura == null &&
+                config.PaisDestino != null &&
+                config.cliente != null)
+            {
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("Error al colocar datos al envío, verifique que los valores y datos correspondan al tipo...");
+                return false;
+            }
         }
 
-        public override IEnvio CrearEnvio() =>
-            new EnvioValorDeclarado(_peso, _dimensiones, _distanciaKm, _montoAsegurado);
     }
+
+
+
+  

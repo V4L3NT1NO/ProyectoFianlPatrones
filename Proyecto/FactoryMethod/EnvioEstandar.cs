@@ -1,19 +1,62 @@
 using Shared;
-public class EnvioEstandar : IEnvio
+public class EnvioEstandar : Envio
 {
-    public float Peso { get; set; }
-    public string Dimensiones { get; set; }
-    public float DistanciaKm { get; set; }
-    public int EnviosMensuales { get; set; }
-    public string PaisDestino { get; set; }
+   
+    private EnvioConfig configEnvio;
 
-    public EnvioEstandar(float peso, string dimensiones, float distanciaKm)
+    private IEstrategiaCalculo estrategiaCalculo = new CalculoEstandar();
+
+    public EnvioEstandar(EnvioConfig config)
     {
-        Peso = peso;
-        Dimensiones = dimensiones;
-        DistanciaKm = distanciaKm;
+        this.configEnvio = config;
     }
 
-    public string ObtenerInfo() =>
-        $"[Estándar] Peso: {Peso}kg | Dimensiones: {Dimensiones}";
+    public override string ObtenerInfo()
+    {
+        var peso = configEnvio.Peso;
+        var dimen = configEnvio.Dimensiones;
+        var dist = configEnvio.DistanciaKm;
+
+        return $"[Estandar] Peso: {peso}kg | Dimensiones: {dimen} | Distancia: {dist}km";
+    }
+
+    public override EnvioConfig getConfig()
+    {
+        return this.configEnvio;
+    }
+
+    public override float getPeso()
+    {
+        return this.configEnvio.Peso;
+    }
+
+    public override string getDimensiones()
+    {
+        return this.configEnvio.Dimensiones;
+    }
+
+    public override float CalcularCosto()
+    {
+
+        var clienteActual =  this.configEnvio.cliente;
+        var contratoActual =clienteActual.Contrato.GetType();
+
+        
+
+        if(diccioario.mapaEstrategias.TryGetValue(contratoActual, out var estrategia)){
+            this.setStrategy(estrategia);
+
+        }else
+        {
+            Console.WriteLine("Tipo de contrato no soportado para calculos, por defecto se usó el calculo estandar");
+            this.setStrategy(new CalculoEstandar());
+        }
+
+        return this.estrategiaCalculo.CalcularCosto(this,clienteActual);
+    }
+
+    public override void setStrategy(IEstrategiaCalculo estrategia)
+    {
+        this.estrategiaCalculo = estrategia;
+    }
 }

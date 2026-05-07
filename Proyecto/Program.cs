@@ -75,7 +75,41 @@ class Program
         operador1.cadenaMando.manejar(incidenciaClimea);
 
 
+
+
+        //Crear Cliente
+
+        var clienteNuevo = new Cliente( "Empresa XYZ","Calle de la esquina",5);
+        clienteNuevo.AsignarContrato(new ContratoCoorporativo("Contrato1","Este es solamente un contrato de prueba"));
+        //Crear un envío
+
+        var config = new EnvioConfig
+        {
+            Peso = 5.5f,
+            Dimensiones = "30x20x15 cm",
+            DistanciaKm = 150f,
+            PaisDestino = "Chile",
+            Temperatura = -5f,
+            cliente = clienteNuevo
+        };
+
+        var fabrica = new CreadorEnvioRefrigerado();
+        var envio =  fabrica.EntregarEnvio(config);
+
+        if(envio != null){
+        Console.WriteLine($"Envío procesado: {envio.ObtenerInfo()}");
+//Utilizar el strategy
+
+        Console.WriteLine($"Costo del envío: {envio.CalcularCosto()}");
+        }
+
         
+
+       
+
+
+
+
 
 
 

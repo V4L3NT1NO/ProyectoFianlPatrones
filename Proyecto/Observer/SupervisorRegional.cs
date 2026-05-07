@@ -15,6 +15,10 @@ namespace ObserverF
 
         private DirectorDespacho directorDespacho;
 
+        public ICreadorEnvio fabrica;
+
+
+
 
 
 
@@ -30,5 +34,6 @@ namespace ObserverF
 
 
         public void SetHandler(AbstractHandler handler) => this.cadenaMando = handler;
+        public void SetFabrica(ICreadorEnvio fabrica) => this.fabrica = fabrica;
     }
 }
